@@ -30,7 +30,7 @@ jobs:
         run: |
           sed -i 's/@osdk\/client\.unstable/@bobbyfidz\/osdk-client.unstable/g' packages/client.unstable/package.json
       - name: Publish
-        run: pnpm publish --access restricted --no-git-checks
+        run: pnpm publish --no-git-checks
         working-directory: packages/client.unstable
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
