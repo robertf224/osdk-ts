@@ -30,6 +30,8 @@ export { bulkLoadOntologyEntities } from "./generated/ontology-metadata/api/Onto
 export { getLinkTypesForObjectTypes } from "./generated/ontology-metadata/api/OntologyMetadataService/getLinkTypesForObjectTypes.js";
 export { loadAllOntologies } from "./generated/ontology-metadata/api/OntologyMetadataService/loadAllOntologies.js";
 
+export { bulkLoadObjectTypeSchemaMigrations } from "./generated/ontology-metadata/api/schemamigrations/OntologySchemaMigrationService.js";
+
 export * from "./generated/ontology-metadata/api/__components.js";
 
 export type {
