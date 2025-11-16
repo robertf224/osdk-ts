@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --filter @bobbyfidz/osdk-client.unstable
       - name: Build
-        run: pnpm build --filter @bobbyfidz/osdk-client.unstable
+        run: pnpm turbo build --filter @bobbyfidz/osdk-client.unstable
       - name: Publish
         run: pnpm publish --filter @bobbyfidz/osdk-client.unstable --access restricted
         env:
