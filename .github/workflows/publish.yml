@@ -23,10 +23,14 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install --filter @bobbyfidz/osdk-client.unstable
+        run: pnpm install
       - name: Build
-        run: pnpm turbo build --filter @bobbyfidz/osdk-client.unstable
+        run: pnpm turbo build --filter @osdk/client.unstable
+      - name: Overwrite package names
+        run: |
+          sed -i 's/@osdk\/client\.unstable/@bobbyfidz\/osdk-client.unstable/g' packages/client.unstable/package.json
       - name: Publish
-        run: pnpm publish --filter @bobbyfidz/osdk-client.unstable --access restricted
+        run: pnpm publish --access restricted --no-git-checks
+        working-directory: packages/client.unstable
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
